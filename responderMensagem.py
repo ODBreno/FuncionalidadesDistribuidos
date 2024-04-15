@@ -11,7 +11,6 @@ def responder_mensagem():
     if 'mensagem' in data:
         mensagem = data['mensagem']
         resposta = f"A mensagem: {mensagem} foi enviada com sucesso!"
-        
         # Retorna a resposta para o barramento
         return jsonify({'resposta': resposta})
     else:
