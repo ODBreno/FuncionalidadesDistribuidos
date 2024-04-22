@@ -6,7 +6,7 @@ app = Flask(__name__)
 def calcular():
     # Extrai os dados JSON da solicitação
     data = request.json
-    
+    print(data)
     # Verifica se todas as chaves necessárias estão presentes nos dados
     if 'numero1' not in data or 'operador' not in data or 'numero2' not in data:
         return jsonify({'error': 'Por favor, forneça número 1, operador e número 2!'}), 400
@@ -20,10 +20,13 @@ def calcular():
     # Realiza a operação matemática com base no operador
     if operador == '+':
         resultado = numero1 + numero2
+        print(resultado)
     elif operador == '-':
         resultado = numero1 - numero2
+        print(resultado)
     elif operador == '*':
         resultado = numero1 * numero2
+        print(resultado)
     elif operador == '/':
         if numero2 == 0:
             return jsonify({'resultado': 'Não é possível dividir por zero!'}), 400
